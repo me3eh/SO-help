@@ -1,0 +1,45 @@
+#zadanie 1
+print(input("Podaj nazwisko", ', ', input("Podaj imie"))
+
+#zadanie 2
+names = input("Podaj imie oraz nazwisko").split(" ")
+print(names[1] + ", " + names[0])
+
+#zadanie 3
+xy1 = input("Podaj po spacji wspolrzedne pierwszego punktu").split()
+xy2 = input("Podaj po spacji wspolrzedne drugiego punktu").split()
+print(round(((float(xy2[1]) - float(xy1[1]))**2 + (float(xy2[0]) - float(xy1[0]))**2)**(1/2), 2))
+
+# zadanie 4
+guests = int(input("Number of guests:"))
+print("Option 1: " , 32 // guests,  "slices each, ",  32 % guests, "left over\nOption 2: ", round(32 / guests, 1), "slices each")
+
+#zadanie 5
+for i in input("Podaj swoje zdanko:\n").split(" ")[::-1]:
+    print(i)
+
+#zadanie 6
+length = input("Dlugosc weza: ")
+print("Wielkosc klatki: ", ((int(length) - 6) * 0.75 + 6 * 0.5) if int(length) >=6 else int(length) * 0.5)
+
+#zadanie 7
+#a
+print([i**2 for i in range(1, 11)])
+#b
+print([i[0] for i in input("Twoj string").split()])
+#c
+print([(i, j) for i in range(1, 51) for j in range(1, 51) if i * j < 50])
+
+#zadanie 8
+word = input("Podaj jakiekolwiek slowo, zobacze czy to palindrom").lower()
+print("Prawda" if word[::-1] == word else "Falsz")
+
+#zadanie 9
+def persistence(number):
+    if(len(str(number)) == 1):
+        return 0
+    suma = 1
+    for i in str(number):
+        suma = suma * int(i)
+    return persistence(suma) + 1
+print(persistence(int(input("Twoje wejscie"))))
